@@ -9,3 +9,12 @@ export https_proxy=http://127.0.0.1:7890
 ```bash
 du -sh *
 ```
+
+# Git
+提交文件
+``` bash
+git status
+git add .
+git commit -m "本次修改说明"
+git push
+```
