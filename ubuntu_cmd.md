@@ -91,6 +91,74 @@ git checkout commit编号
 git checkout main
 ```
 
+## 分支相关命令
+
+查看本地分支：
+
+```bash
+git branch
+```
+
+查看本地和远程分支：
+
+```bash
+git branch -a
+```
+
+创建新分支：
+
+```bash
+git branch 分支名
+```
+
+创建并切换到新分支：
+
+```bash
+git checkout -b 分支名
+```
+
+切换到已有分支：
+
+```bash
+git checkout 分支名
+```
+
+重命名当前分支：
+
+```bash
+git branch -m 新分支名
+```
+
+删除本地分支：
+
+```bash
+git branch -d 分支名
+```
+
+强制删除本地分支：
+
+```bash
+git branch -D 分支名
+```
+
+删除远程分支：
+
+```bash
+git push origin --delete 分支名
+```
+
+推送本地分支到远程并建立跟踪关系：
+
+```bash
+git push -u origin 分支名
+```
+
+拉取远程分支到本地并切换：
+
+```bash
+git checkout -b 分支名 origin/分支名
+```
+
 ## git reset
 
 彻底重置到指定版本（**危险！会覆盖当前代码**）：
