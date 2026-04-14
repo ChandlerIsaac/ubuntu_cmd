@@ -93,6 +93,8 @@ git checkout main
 
 ## 分支相关命令
 
+![示例](pic/git.png)
+
 查看本地分支：
 
 ```bash
