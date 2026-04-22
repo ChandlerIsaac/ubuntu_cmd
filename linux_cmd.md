@@ -1,3 +1,102 @@
+# 用户
+
+新建用户  
+```bash
+useradd -m -s /bin/bash isaac
+```
+> `-m` → 自动创建 `/home/isaac` 家目录
+> `-s /bin/bash` → 默认 shell
+
+创建完用户之后，必须设置密码
+```bash
+passwd isaac
+```
+
+`~/`下隐藏文件
+```bash
+.bash_history
+.bash_logout
+.bash_profile
+.bashrc
+.viminfo
+```
+> - `.bashrc ` 定义 bash 的运行环境 (环境变量,conda初始化,prompt命令行样式)
+> - `.bash_profile`  登录 shell 才会执行（比如 SSH 登录）
+> - `.bash_logout` 退出 shell 时执行 (清屏清理临时状态)
+> - `.bash_history` 记录执行过的命令 
+> - `.viminfo` vim 编辑器的历史记录 
+
+### .bashrc文件
+```bash
+# .bashrc
+
+  
+
+# Source global definitions
+
+if [ -f /etc/bashrc ]; then
+
+    . /etc/bashrc
+
+fi
+
+  
+
+# User specific environment
+
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+
+then
+
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+
+fi
+
+export PATH
+
+  
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+
+# export SYSTEMD_PAGER=
+
+  
+
+# User specific aliases and functions
+# >>> conda initialize >>>
+
+# !! Contents within this block are managed by 'conda init' !!
+
+__conda_setup="$('/home/isaac/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+
+if [ $? -eq 0 ]; then
+
+    eval "$__conda_setup"
+
+else
+
+    if [ -f "/home/isaac/miniconda3/etc/profile.d/conda.sh" ]; then
+
+        . "/home/isaac/miniconda3/etc/profile.d/conda.sh"
+
+    else
+
+        export PATH="/home/isaac/miniconda3/bin:$PATH"
+
+    fi
+
+fi
+
+unset __conda_setup
+
+# <<< conda initialize <<<
+```
+
+可以在`.bashrc`中加入相关的命令来更改shell prompt的格式
+```bash
+
+```
+
 # 网络
 
 ## 配置当前终端使用代理网络下载相应的资源
